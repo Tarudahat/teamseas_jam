@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/lvl0.png" type="Texture" id=1]
+[ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/backdrop.png" type="Texture" id=3]
+[ext_resource path="res://objects/Trash.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/Fish.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/Open_Fish_cirkel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/hart_item.tscn" type="PackedScene" id=7]
+
+[node name="Level" type="Node2D"]
+
+[node name="CanvasLayer" type="ParallaxBackground" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Player" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 284.804, 366.833 )
+
+[node name="Trash" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 1204.16, 834.169 )
+
+[node name="Trash2" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 1698.61, 1022.53 )
+
+[node name="Trash3" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 1494.5, 883.939 )
+
+[node name="Trash4" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 889.741, 823.463 )
+
+[node name="Trash5" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 1053.53, 662.193 )
+
+[node name="Trash6" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 783.908, 614.316 )
+
+[node name="Trash7" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 667.995, 752.907 )
+
+[node name="Trash8" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 458.848, 878.899 )
+
+[node name="Fish" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 1268.1, 549.954 )
+
+[node name="Fish2" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 1505.7, 376.425 )
+
+[node name="Fish3" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 835.61, 301.674 )
+
+[node name="Open_Fish_cirkel" parent="Objects" instance=ExtResource( 6 )]
+position = Vector2( 404.093, 1673.26 )
+
+[node name="Open_Fish_cirkel2" parent="Objects" instance=ExtResource( 6 )]
+position = Vector2( 404.093, 1673.26 )
+
+[node name="AnimatedSprite" parent="Objects" instance=ExtResource( 7 )]
+position = Vector2( 584.824, 182.228 )

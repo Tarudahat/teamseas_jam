@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/garbage/trash_0.png" type="Texture" id=1]
+[ext_resource path="res://assets/Bobbing_shader.shader" type="Shader" id=2]
+[ext_resource path="res://objects/Trash.gd" type="Script" id=3]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 2 )
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 76.0016
+
+[node name="Trash" type="Sprite"]
+material = SubResource( 2 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
