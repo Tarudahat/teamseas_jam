@@ -18,10 +18,7 @@ _global_script_class_icons={
 config/name="Trash shredder"
 run/main_scene="res://levels/Level.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-Globals="*res://globals.gd"
+config/windows_native_icon="res://assets/icon.ico"
 
 [display]
 
@@ -37,4 +34,6 @@ in_mouse_left={
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
+quality/shading/force_vertex_shading=true
 environment/default_environment="res://default_env.tres"
