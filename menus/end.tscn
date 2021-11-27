@@ -1,0 +1,137 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://menus/font.tres" type="Theme" id=1]
+[ext_resource path="res://assets/backdrop.png" type="Texture" id=2]
+[ext_resource path="res://menus/end.gd" type="Script" id=3]
+[ext_resource path="res://assets/thx.png" type="Texture" id=4]
+[ext_resource path="res://assets/audio/music/a-farming-we-will-go.ogg" type="AudioStream" id=5]
+[ext_resource path="res://menus/falling_trash.tscn" type="PackedScene" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 1024, 600 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1024, 0, 1024, 600 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[node name="end" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 2, 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="plug" type="Control" parent="."]
+margin_left = 60.0
+margin_top = 4.0
+margin_right = 100.0
+margin_bottom = 44.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="plug"]
+margin_left = 256.0
+margin_top = 516.0
+margin_right = 676.0
+margin_bottom = 572.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[url=https://discord.gg/waGzerFFw3]Enjoyed this game? Come and join me on discord for updates on more games like it![/url]"
+text = "Enjoyed this game? Come and join me on discord for updates on more games like it!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="plug"]
+margin_left = 256.0
+margin_top = 516.0
+margin_right = 676.0
+margin_bottom = 572.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[url=https://discord.gg/waGzerFFw3]Enjoyed this game? Come and join me on discord for updates on more games like it![/url]"
+text = "Enjoyed this game? Come and join me on discord for updates on more games like it!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="plug"]
+margin_left = 256.0
+margin_top = 516.0
+margin_right = 676.0
+margin_bottom = 572.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[url=https://discord.gg/waGzerFFw3]Enjoyed this game? Come and join me on discord for updates on more games like it![/url]"
+text = "Enjoyed this game? Come and join me on discord for updates on more games like it!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="sprite" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( -60, 60 )
+trashy = false
+
+[node name="sprite2" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( -164, 136 )
+trashy = false
+
+[node name="sprite3" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( -88, 252 )
+trashy = false
+
+[node name="sprite4" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( -228, 356 )
+trashy = false
+
+[node name="sprite5" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( -68, 480 )
+trashy = false
+
+[node name="sprite6" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( -48, 368 )
+trashy = false
+
+[node name="sprite7" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( -288, 224 )
+trashy = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -20.0
+pitch_scale = 1.05
+autoplay = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 4, 0 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+offset = Vector2( 512, 300 )
+[connection signal="meta_clicked" from="plug/RichTextLabel3" to="." method="_on_RichTextLabel3_meta_clicked"]
+[connection signal="meta_clicked" from="plug/RichTextLabel4" to="." method="_on_RichTextLabel3_meta_clicked"]
+[connection signal="meta_clicked" from="plug/RichTextLabel5" to="." method="_on_RichTextLabel3_meta_clicked"]

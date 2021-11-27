@@ -1,0 +1,248 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/backdrop.png" type="Texture" id=1]
+[ext_resource path="res://menus/title_screen.gd" type="Script" id=2]
+[ext_resource path="res://assets/start_button.png" type="Texture" id=3]
+[ext_resource path="res://assets/logo.png" type="Texture" id=4]
+[ext_resource path="res://menus/falling_trash.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/quit_button.png" type="Texture" id=6]
+[ext_resource path="res://menus/font.tres" type="Theme" id=7]
+[ext_resource path="res://assets/audio/music/a-farming-we-will-go.ogg" type="AudioStream" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 350, 100 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 350, 0, 350, 100 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 350, 100 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 350, 0, 350, 100 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="trash" type="Node2D" parent="."]
+position = Vector2( 0, 0.5 )
+
+[node name="sprite3" parent="trash" instance=ExtResource( 5 )]
+position = Vector2( -56, 347.5 )
+
+[node name="sprite4" parent="trash" instance=ExtResource( 5 )]
+position = Vector2( -176, 227.5 )
+
+[node name="sprite6" parent="trash" instance=ExtResource( 5 )]
+position = Vector2( -252, 123.5 )
+
+[node name="sprite7" parent="trash" instance=ExtResource( 5 )]
+position = Vector2( -240, 323.5 )
+
+[node name="sprite8" parent="trash" instance=ExtResource( 5 )]
+position = Vector2( -348, 475.5 )
+
+[node name="sprite2" parent="trash" instance=ExtResource( 5 )]
+position = Vector2( -92, 83.5 )
+
+[node name="sprite5" parent="trash" instance=ExtResource( 5 )]
+position = Vector2( -104, 479.5 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 368.0
+margin_top = 230.0
+margin_right = 656.0
+margin_bottom = 302.0
+custom_styles/focus = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Button"]
+position = Vector2( 140, 40 )
+frames = SubResource( 6 )
+playing = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 148.0
+margin_top = 20.0
+margin_right = 1148.0
+margin_bottom = 270.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 4 )
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 348.0
+margin_top = 392.0
+margin_right = 668.0
+margin_bottom = 464.0
+custom_styles/focus = SubResource( 7 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Button2"]
+position = Vector2( 160, 32 )
+frames = SubResource( 10 )
+playing = true
+
+[node name="Control" type="Control" parent="."]
+margin_left = 84.0
+margin_top = -16.0
+margin_right = 124.0
+margin_bottom = 24.0
+theme = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="Control"]
+margin_left = -55.0
+margin_top = 550.0
+margin_right = 565.0
+margin_bottom = 602.0
+theme = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[url=https://joshua-mclean.itch.io]Contains music ©2021 Joshua McLean (https://joshua-mclean.itch.io)
+Licensed under Creative Commons Attribution 4.0 International[/url]"
+text = "Contains music ©2021 Joshua McLean (https://joshua-mclean.itch.io)
+Licensed under Creative Commons Attribution 4.0 International"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="RichTextLabel" parent="Control"]
+margin_left = -55.0
+margin_top = 550.0
+margin_right = 565.0
+margin_bottom = 602.0
+theme = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[url=https://joshua-mclean.itch.io]Contains music ©2021 Joshua McLean (https://joshua-mclean.itch.io)
+Licensed under Creative Commons Attribution 4.0 International[/url]"
+text = "Contains music ©2021 Joshua McLean (https://joshua-mclean.itch.io)
+Licensed under Creative Commons Attribution 4.0 International"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="RichTextLabel" parent="Control"]
+margin_left = -55.0
+margin_top = 550.0
+margin_right = 565.0
+margin_bottom = 602.0
+theme = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[url=https://joshua-mclean.itch.io]Contains music ©2021 Joshua McLean (https://joshua-mclean.itch.io)
+Licensed under Creative Commons Attribution 4.0 International[/url]"
+text = "Contains music ©2021 Joshua McLean (https://joshua-mclean.itch.io)
+Licensed under Creative Commons Attribution 4.0 International"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="Control" parent="."]
+margin_left = 84.0
+margin_top = -12.0
+margin_right = 124.0
+margin_bottom = 28.0
+theme = ExtResource( 7 )
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control2"]
+margin_left = 569.0
+margin_top = 542.0
+margin_right = 883.0
+margin_bottom = 599.0
+rect_scale = Vector2( 1.2, 1.2 )
+theme = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[url=https://discord.gg/waGzerFFw3]Game by Taru, like this game? Come and join me on discord![/url]"
+text = "Game by Taru, like this game? Come and join me on discord!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Control2"]
+margin_left = 569.0
+margin_top = 542.0
+margin_right = 883.0
+margin_bottom = 599.0
+rect_scale = Vector2( 1.2, 1.2 )
+theme = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[url=https://discord.gg/waGzerFFw3]Game by Taru, like this game? Come and join me on discord![/url]"
+text = "Game by Taru, like this game? Come and join me on discord!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Control2"]
+margin_left = 569.0
+margin_top = 542.0
+margin_right = 883.0
+margin_bottom = 599.0
+rect_scale = Vector2( 1.2, 1.2 )
+theme = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[url=https://discord.gg/waGzerFFw3]Game by Taru, like this game? Come and join me on discord![/url]"
+text = "Game by Taru, like this game? Come and join me on discord!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -15.0
+autoplay = true
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="meta_clicked" from="Control/Label" to="." method="_on_Label_meta_clicked"]
+[connection signal="meta_clicked" from="Control/Label2" to="." method="_on_Label_meta_clicked"]
+[connection signal="meta_clicked" from="Control/Label3" to="." method="_on_Label_meta_clicked"]
+[connection signal="meta_clicked" from="Control2/RichTextLabel3" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="meta_clicked" from="Control2/RichTextLabel4" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="meta_clicked" from="Control2/RichTextLabel5" to="." method="_on_RichTextLabel_meta_clicked"]

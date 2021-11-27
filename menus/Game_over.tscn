@@ -1,0 +1,157 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/backdrop.png" type="Texture" id=1]
+[ext_resource path="res://assets/game_over.png" type="Texture" id=2]
+[ext_resource path="res://assets/quit_button.png" type="Texture" id=3]
+[ext_resource path="res://assets/again_button.png" type="Texture" id=4]
+[ext_resource path="res://menus/falling_trash.tscn" type="PackedScene" id=5]
+[ext_resource path="res://menus/Game_over.gd" type="Script" id=6]
+[ext_resource path="res://assets/audio/music/a-farming-we-will-go.ogg" type="AudioStream" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 700, 250 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 700, 0, 700, 250 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 350, 100 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 350, 0, 350, 100 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 350, 100 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 350, 0, 350, 100 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[node name="Game_over" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 2, 2 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 0, -0.5 )
+
+[node name="sprite6" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( -152, 528 )
+ded = true
+
+[node name="sprite5" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( -140, 404 )
+ded = true
+
+[node name="sprite4" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( -140, 404 )
+ded = true
+
+[node name="sprite3" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( -48, 304 )
+ded = true
+
+[node name="sprite2" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( -156, 168 )
+ded = true
+
+[node name="sprite" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( -88, 52 )
+ded = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 524, 156 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 360.0
+margin_top = 300.0
+margin_right = 640.0
+margin_bottom = 384.0
+custom_styles/focus = SubResource( 10 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Button"]
+position = Vector2( 140, 44 )
+frames = SubResource( 6 )
+playing = true
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 356.0
+margin_top = 452.0
+margin_right = 640.0
+margin_bottom = 528.0
+custom_styles/focus = SubResource( 11 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Button2"]
+position = Vector2( 144, 32 )
+frames = SubResource( 9 )
+playing = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -20.0
+pitch_scale = 0.7
+autoplay = true
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

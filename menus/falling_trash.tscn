@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/fish.png" type="Texture" id=1]
+[ext_resource path="res://menus/falling_trash.gd" type="Script" id=2]
+[ext_resource path="res://assets/Bobbing_shader_fallin.shader" type="Shader" id=3]
+[ext_resource path="res://objects/Trash.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/ded_fish.png" type="Texture" id=5]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 256, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 256, 0, 256, 256 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "ded",
+"speed": 3.0
+} ]
+
+[node name="sprite" type="AnimatedSprite"]
+material = SubResource( 1 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
+script = ExtResource( 2 )
+
+[node name="trash_sprite" parent="." instance=ExtResource( 4 )]
+scale = Vector2( 1.5, 1.5 )
