@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/backdrop.png" type="Texture" id=1]
+[ext_resource path="res://title_screen.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="."]
+margin_left = 4.0
+margin_top = 556.0
+margin_right = 454.0
+margin_bottom = 587.0
+rect_scale = Vector2( 1.2, 1.2 )
+bbcode_enabled = true
+bbcode_text = "[url=https://joshua-mclean.itch.io]Contains music ©2021 Joshua McLean (https://joshua-mclean.itch.io)
+Licensed under Creative Commons Attribution 4.0 International[/url]"
+text = "Contains music ©2021 Joshua McLean (https://joshua-mclean.itch.io)
+Licensed under Creative Commons Attribution 4.0 International"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="meta_clicked" from="Label" to="." method="_on_Label_meta_clicked"]

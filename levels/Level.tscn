@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/lvl0.png" type="Texture" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://objects/fish/Open_Fish_cirkel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/fish/Fish_cog.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/hart_item.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/audio/music/a-farming-we-will-go.ogg" type="AudioStream" id=9]
+[ext_resource path="res://objects/fish/dou_fish.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/End_flag.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -59,7 +62,72 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1000, 4464, 0, 0, 0, 0, 928, 4392, 0, 0, 0, 0, 832, 4288, 0, 0, 0, 0, 736, 4552, 0, 0, 0, 0, 584, 4296, 0, 0, 0, 0, 432, 4544, 0, 0, 0, 0, 448, 4288, 0, 0, 0, 0, 584, 4544, 0, 0, 0, 0, 712, 4296, 0, 0, 0, 0, 872, 4536, 0, 0, 0, 0, 944, 4248, 0, 0, 0, 0, 1000, 4464 )
 }
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="Curve2D" id=11]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 4624, 4040, 0, 0, 0, 0, 4864, 4008, 0, 0, 0, 0, 4896, 3872, 0, 0, 0, 0, 5176, 3856, 0, 0, 0, 0, 5176, 3856, 0, 0, 0, 0, 4896, 3872, 0, 0, 0, 0, 4864, 4008, 0, 0, 0, 0, 4624, 4040 )
+}
+
+[sub_resource type="Curve2D" id=12]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3064, 5112, 0, 0, 0, 0, 3184, 5048, 0, 0, 0, 0, 3280, 5016, 0, 0, 0, 0, 3408, 5040, 0, 0, 0, 0, 3520, 5088, 0, 0, 0, 0, 3688, 5136, 0, 0, 0, 0, 3824, 5176, 0, 0, 0, 0, 4032, 5240, 0, 0, 0, 0, 4560, 5256, 0, 0, 0, 0, 4040, 5224, 0, 0, 0, 0, 3872, 5144, 0, 0, 0, 0, 3688, 5136, 0, 0, 0, 0, 3520, 5088, 0, 0, 0, 0, 3400, 5040, 0, 0, 0, 0, 3280, 5016, 0, 0, 0, 0, 3184, 5048, 0, 0, 0, 0, 3064, 5112 )
+}
+
+[sub_resource type="Curve2D" id=13]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 5856, 5224, 0, 0, 0, 0, 5736, 5160, 0, 0, 0, 0, 5736, 5160, 0, 0, 0, 0, 5696, 5024, 0, 0, 0, 0, 5704, 4888, 0, 0, 0, 0, 5672, 4768, 0, 0, 0, 0, 5608, 4632, 0, 0, 0, 0, 5560, 4568, 0, 0, 0, 0, 5544, 4480, 0, 0, 0, 0, 5648, 4416, 0, 0, 0, 0, 5784, 4352, 0, 0, 0, 0, 5904, 4352, 0, 0, 0, 0, 6000, 4424, 0, 0, 0, 0, 6064, 4456, 0, 0, 0, 0, 6248, 4496, 0, 0, 0, 0, 6328, 4520, 0, 0, 0, 0, 6408, 4576, 0, 0, 0, 0, 6464, 4624, 0, 0, 0, 0, 6520, 4680, 0, 0, 0, 0, 6592, 4800, 0, 0, 0, 0, 6664, 4848, 0, 0, 0, 0, 6760, 4888, 0, 0, 0, 0, 6848, 4936, 0, 0, 0, 0, 6856, 5024, 0, 0, 0, 0, 6832, 5104, 0, 0, 0, 0, 6784, 5184, 0, 0, 0, 0, 6672, 5232, 0, 0, 0, 0, 6488, 5232, 0, 0, 0, 0, 6368, 5208, 0, 0, 0, 0, 6296, 5192, 0, 0, 0, 0, 6168, 5184, 0, 0, 0, 0, 6096, 5208, 0, 0, 0, 0, 6008, 5240, 0, 0, 0, 0, 5856, 5224, 0, 0, 0, 0, 5720, 5152, 0, 0, 0, 0, 5688, 5016, 0, 0, 0, 0, 5688, 4880, 0, 0, 0, 0, 5656, 4776, 0, 0, 0, 0, 5600, 4632, 0, 0, 0, 0, 5552, 4576, 0, 0, 0, 0, 5568, 4456, 0, 0, 0, 0, 5664, 4384, 0, 0, 0, 0, 5800, 4336, 0, 0, 0, 0, 5936, 4352, 0, 0, 0, 0, 6016, 4416, 0, 0, 0, 0, 6096, 4440, 0, 0, 0, 0, 6200, 4496, 0, 0, 0, 0, 6272, 4512, 0, 0, 0, 0, 6392, 4576, 0, 0, 0, 0, 6472, 4648, 0, 0, 0, 0, 6536, 4728, 0, 0, 0, 0, 6592, 4824, 0, 0, 0, 0, 6664, 4864, 0, 0, 0, 0, 6832, 4936, 0, 0, 0, 0, 6864, 4992, 0, 0, 0, 0, 6840, 5104, 0, 0, 0, 0, 6792, 5200, 0, 0, 0, 0, 6664, 5216, 0, 0, 0, 0, 6512, 5216, 0, 0, 0, 0, 6424, 5240, 0, 0, 0, 0, 6304, 5200, 0, 0, 0, 0, 6136, 5176, 0, 0, 0, 0, 6008, 5240, 0, 0, 0, 0, 5856, 5224 )
+}
+
+[sub_resource type="Curve2D" id=14]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 4728, 3104, 0, 0, 0, 0, 4728, 3104, 0, 0, 0, 0, 4672, 2984, 0, 0, 0, 0, 4616, 2904, 0, 0, 0, 0, 4592, 2800, 0, 0, 0, 0, 4640, 2720, 0, 0, 0, 0, 4712, 2640, 0, 0, 0, 0, 4856, 2584, 0, 0, 0, 0, 5032, 2512, 0, 0, 0, 0, 5248, 2440, 0, 0, 0, 0, 5464, 2392, 0, 0, 0, 0, 5592, 2384, 0, 0, 0, 0, 5688, 2384, 0, 0, 0, 0, 5760, 2440, 0, 0, 0, 0, 5768, 2544, 0, 0, 0, 0, 5752, 2624, 0, 0, 0, 0, 5648, 2648, 0, 0, 0, 0, 5544, 2688, 0, 0, 0, 0, 5448, 2712, 0, 0, 0, 0, 5384, 2744, 0, 0, 0, 0, 5376, 2808, 0, 0, 0, 0, 5376, 2880, 0, 0, 0, 0, 5432, 2920, 0, 0, 0, 0, 5520, 2928, 0, 0, 0, 0, 5616, 2952, 0, 0, 0, 0, 5728, 2968, 0, 0, 0, 0, 5728, 2968, 0, 0, 0, 0, 5768, 3048, 0, 0, 0, 0, 5760, 3176, 0, 0, 0, 0, 5728, 3256, 0, 0, 0, 0, 5632, 3344, 0, 0, 0, 0, 5512, 3384, 0, 0, 0, 0, 5328, 3352, 0, 0, 0, 0, 5152, 3288, 0, 0, 0, 0, 5040, 3280, 0, 0, 0, 0, 4928, 3264, 0, 0, 0, 0, 4840, 3216, 0, 0, 0, 0, 4728, 3104, 0, 0, 0, 0, 4616, 2896, 0, 0, 0, 0, 4592, 2776, 0, 0, 0, 0, 4656, 2680, 0, 0, 0, 0, 4808, 2584, 0, 0, 0, 0, 5080, 2488, 0, 0, 0, 0, 5352, 2424, 0, 0, 0, 0, 5608, 2368, 0, 0, 0, 0, 5712, 2416, 0, 0, 0, 0, 5752, 2480, 0, 0, 0, 0, 5744, 2584, 0, 0, 0, 0, 5608, 2656, 0, 0, 0, 0, 5408, 2720, 0, 0, 0, 0, 5384, 2792, 0, 0, 0, 0, 5392, 2872, 0, 0, 0, 0, 5520, 2928, 0, 0, 0, 0, 5664, 2968, 0, 0, 0, 0, 5720, 2992, 0, 0, 0, 0, 5752, 3080, 0, 0, 0, 0, 5752, 3168, 0, 0, 0, 0, 5712, 3288, 0, 0, 0, 0, 5592, 3344, 0, 0, 0, 0, 5512, 3384, 0, 0, 0, 0, 5328, 3352, 0, 0, 0, 0, 5152, 3288, 0, 0, 0, 0, 5040, 3280, 0, 0, 0, 0, 4928, 3264, 0, 0, 0, 0, 4840, 3216, 0, 0, 0, 0, 4728, 3104 )
+}
+
+[sub_resource type="Curve2D" id=15]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 4968, 2016, 0, 0, 0, 0, 4776, 1696, 0, 0, 0, 0, 5104, 1776, 0, 0, 0, 0, 5008, 1504, 0, 0, 0, 0, 5320, 1672, 0, 0, 0, 0, 5128, 1376, 0, 0, 0, 0, 5512, 1536, 0, 0, 0, 0, 5232, 1184, 0, 0, 0, 0, 5568, 1200, 0, 0, 0, 0, 5200, 1296, 0, 0, 0, 0, 5400, 1600, 0, 0, 0, 0, 5072, 1440, 0, 0, 0, 0, 5184, 1712, 0, 0, 0, 0, 4904, 1616, 0, 0, 0, 0, 5024, 1880, 0, 0, 0, 0, 4784, 1904, 0, 0, 0, 0, 4968, 2016 )
+}
+
+[sub_resource type="Curve2D" id=16]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3648, 4408, 0, 0, 0, 0, 3640, 4512, 0, 0, 0, 0, 3704, 4584, 0, 0, 0, 0, 3840, 4632, 0, 0, 0, 0, 3968, 4608, 0, 0, 0, 0, 4048, 4536, 0, 0, 0, 0, 4032, 4424, 0, 0, 0, 0, 3960, 4320, 0, 0, 0, 0, 3920, 4232, 0, 0, 0, 0, 3944, 4144, 0, 0, 0, 0, 4064, 4056, 0, 0, 0, 0, 4192, 3928, 0, 0, 0, 0, 4176, 3808, 0, 0, 0, 0, 4112, 3728, 0, 0, 0, 0, 4024, 3632, 0, 0, 0, 0, 4000, 3536, 0, 0, 0, 0, 4048, 3432, 0, 0, 0, 0, 4136, 3360, 0, 0, 0, 0, 4280, 3336, 0, 0, 0, 0, 4432, 3400, 0, 0, 0, 0, 4456, 3528, 0, 0, 0, 0, 4416, 3616, 0, 0, 0, 0, 4312, 3688, 0, 0, 0, 0, 4208, 3728, 0, 0, 0, 0, 3968, 3720, 0, 0, 0, 0, 3888, 3760, 0, 0, 0, 0, 3816, 3816, 0, 0, 0, 0, 3808, 3912, 0, 0, 0, 0, 3816, 4008, 0, 0, 0, 0, 3920, 4056, 0, 0, 0, 0, 4056, 4056, 0, 0, 0, 0, 4240, 4080, 0, 0, 0, 0, 4296, 4144, 0, 0, 0, 0, 4304, 4224, 0, 0, 0, 0, 4264, 4296, 0, 0, 0, 0, 4184, 4344, 0, 0, 0, 0, 4080, 4384, 0, 0, 0, 0, 3864, 4312, 0, 0, 0, 0, 3760, 4328, 0, 0, 0, 0, 3648, 4408 )
+}
+
+[sub_resource type="Curve2D" id=17]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 6888, 1800, 0, 0, 0, 0, 6992, 1856, 0, 0, 0, 0, 7208, 1888, 0, 0, 0, 0, 7264, 1848, 0, 0, 0, 0, 7256, 1784, 0, 0, 0, 0, 7176, 1744, 0, 0, 0, 0, 7056, 1712, 0, 0, 0, 0, 6976, 1680, 0, 0, 0, 0, 6880, 1704, 0, 0, 0, 0, 6888, 1800 )
+}
+
+[sub_resource type="Curve2D" id=18]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 7128, 2344, 0, 0, 0, 0, 6984, 2376, 0, 0, 0, 0, 6928, 2416, 0, 0, 0, 0, 6896, 2464, 0, 0, 0, 0, 6896, 2560, 0, 0, 0, 0, 6928, 2656, 0, 0, 0, 0, 7000, 2744, 0, 0, 0, 0, 7128, 2800, 0, 0, 0, 0, 7376, 2840, 0, 0, 0, 0, 7592, 2912, 0, 0, 0, 0, 7800, 2992, 0, 0, 0, 0, 7952, 3136, 0, 0, 0, 0, 8120, 3232, 0, 0, 0, 0, 8272, 3216, 0, 0, 0, 0, 8336, 3144, 0, 0, 0, 0, 8344, 3024, 0, 0, 0, 0, 8296, 2824, 0, 0, 0, 0, 8200, 2704, 0, 0, 0, 0, 8072, 2632, 0, 0, 0, 0, 7912, 2544, 0, 0, 0, 0, 7776, 2440, 0, 0, 0, 0, 7640, 2376, 0, 0, 0, 0, 7392, 2344, 0, 0, 0, 0, 7128, 2344 )
+}
+
+[sub_resource type="Curve2D" id=19]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 6312, 3824, 0, 0, 0, 0, 6456, 3744, 0, 0, 0, 0, 6504, 3672, 0, 0, 0, 0, 6536, 3584, 0, 0, 0, 0, 6560, 3512, 0, 0, 0, 0, 6560, 3408, 0, 0, 0, 0, 6520, 3304, 0, 0, 0, 0, 6560, 3408, 0, 0, 0, 0, 6560, 3512, 0, 0, 0, 0, 6536, 3584, 0, 0, 0, 0, 6504, 3672, 0, 0, 0, 0, 6456, 3744, 0, 0, 0, 0, 6312, 3824 )
+}
+
+[sub_resource type="Curve2D" id=20]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 6608, 3280, 0, 0, 0, 0, 6688, 3336, 0, 0, 0, 0, 6752, 3360, 0, 0, 0, 0, 6904, 3376, 0, 0, 0, 0, 7048, 3376, 0, 0, 0, 0, 7152, 3352, 0, 0, 0, 0, 7280, 3312, 0, 0, 0, 0, 7344, 3248, 0, 0, 0, 0, 7256, 3320, 0, 0, 0, 0, 7152, 3360, 0, 0, 0, 0, 6968, 3376, 0, 0, 0, 0, 6816, 3368, 0, 0, 0, 0, 6672, 3328, 0, 0, 0, 0, 6608, 3280 )
+}
+
+[sub_resource type="Curve2D" id=21]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 8736, 5168, 0, 0, 0, 0, 8944, 5168, 0, 0, 0, 0, 9040, 5160, 0, 0, 0, 0, 9208, 5048, 0, 0, 0, 0, 9248, 4968, 0, 0, 0, 0, 9296, 4856, 0, 0, 0, 0, 9312, 4640, 0, 0, 0, 0, 9240, 4520, 0, 0, 0, 0, 9136, 4448, 0, 0, 0, 0, 8992, 4392, 0, 0, 0, 0, 8896, 4416, 0, 0, 0, 0, 8792, 4464, 0, 0, 0, 0, 8728, 4520, 0, 0, 0, 0, 8720, 4624, 0, 0, 0, 0, 8720, 4760, 0, 0, 0, 0, 8664, 4816, 0, 0, 0, 0, 8544, 4872, 0, 0, 0, 0, 8440, 4936, 0, 0, 0, 0, 8448, 5064, 0, 0, 0, 0, 8552, 5152, 0, 0, 0, 0, 8736, 5168 )
+}
+
+[sub_resource type="Curve2D" id=22]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 8064, 2064, 0, 0, 0, 0, 8200, 2080, 0, 0, 0, 0, 8296, 2072, 0, 0, 0, 0, 8368, 1968, 0, 0, 0, 0, 8408, 1848, 0, 0, 0, 0, 8432, 1672, 0, 0, 0, 0, 8480, 1504, 0, 0, 0, 0, 8592, 1264, 0, 0, 0, 0, 8600, 1080, 0, 0, 0, 0, 8496, 1016, 0, 0, 0, 0, 8304, 968, 0, 0, 0, 0, 8152, 1024, 0, 0, 0, 0, 8072, 1096, 0, 0, 0, 0, 8064, 1280, 0, 0, 0, 0, 8040, 1440, 0, 0, 0, 0, 8000, 1592, 0, 0, 0, 0, 7984, 1752, 0, 0, 0, 0, 7960, 1936, 0, 0, 0, 0, 8064, 2064 )
+}
+
+[sub_resource type="Curve2D" id=23]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 8976, 2560, 0, 0, 0, 0, 9232, 2304, 0, 0, 0, 0, 9216, 2232, 0, 0, 0, 0, 9176, 2176, 0, 0, 0, 0, 9088, 2152, 0, 0, 0, 0, 9024, 2192, 0, 0, 0, 0, 8928, 2264, 0, 0, 0, 0, 8832, 2336, 0, 0, 0, 0, 8768, 2400, 0, 0, 0, 0, 8768, 2464, 0, 0, 0, 0, 8800, 2512, 0, 0, 0, 0, 8856, 2552, 0, 0, 0, 0, 8976, 2560 )
+}
+
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 8800, 10 )
 
 [node name="Level" type="StaticBody2D"]
@@ -76,6 +144,7 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
+rect_scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -125,6 +194,18 @@ offset = 344.32
 
 [node name="Open_Fish_cirkel" parent="Objects/Fishes" instance=ExtResource( 6 )]
 position = Vector2( 3840, 1720 )
+
+[node name="Open_Fish_cirkel7" parent="Objects/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 9216, 3608 )
+
+[node name="Open_Fish_cirkel8" parent="Objects/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 6536, 1424 )
+rotation = 0.261799
+
+[node name="Open_Fish_cirkel9" parent="Objects/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 6200, 1904 )
+rotation = -2.35619
+inverse = -1
 
 [node name="Open_Fish_cirkel2" parent="Objects/Fishes" instance=ExtResource( 6 )]
 position = Vector2( 384, 1688 )
@@ -231,13 +312,382 @@ position = Vector2( 797.776, 4424.66 )
 rotation = 0.98287
 offset = 2073.89
 
+[node name="Path2D11" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 11 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D11" instance=ExtResource( 4 )]
+position = Vector2( 4687.5, 4031.53 )
+rotation = -0.132757
+scale = Vector2( 1.5, 1.5 )
+offset = 64.08
+
+[node name="Path2D12" type="Path2D" parent="Objects/Fishes"]
+position = Vector2( 16, 424 )
+curve = SubResource( 11 )
+
+[node name="PathFollow_Fish2" parent="Objects/Fishes/Path2D12" instance=ExtResource( 4 )]
+position = Vector2( 5079.3, 3861.53 )
+rotation = 3.08459
+scale = Vector2( 1.5, 1.5 )
+offset = 756.12
+
+[node name="Path2D13" type="Path2D" parent="Objects/Fishes"]
+position = Vector2( 32, 816 )
+curve = SubResource( 11 )
+
+[node name="PathFollow_Fish3" parent="Objects/Fishes/Path2D13" instance=ExtResource( 4 )]
+position = Vector2( 4687.42, 4031.54 )
+rotation = -0.132636
+scale = Vector2( 1.5, 1.5 )
+offset = 64.0
+
+[node name="Path2D14" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 12 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D14" instance=ExtResource( 4 )]
+position = Vector2( 3064, 5112 )
+rotation = -0.48995
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Fish_cog2" parent="Objects/Fishes" instance=ExtResource( 7 )]
+position = Vector2( 1472, 4840 )
+
+[node name="Fish_cog3" parent="Objects/Fishes" instance=ExtResource( 7 )]
+position = Vector2( 992, 5032 )
+
+[node name="Fish_cog5" parent="Objects/Fishes" instance=ExtResource( 7 )]
+position = Vector2( 560, 5200 )
+inverse = -1
+
+[node name="Fish_cog4" parent="Objects/Fishes" instance=ExtResource( 7 )]
+position = Vector2( 1640, 5248 )
+inverse = -1
+
+[node name="Path2D15" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 13 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D15" instance=ExtResource( 4 )]
+position = Vector2( 5856, 5224 )
+rotation = -2.65173
+scale = Vector2( 2, 2 )
+
+[node name="PathFollow_Fish2" parent="Objects/Fishes/Path2D15" instance=ExtResource( 4 )]
+position = Vector2( 5653.75, 4413.29 )
+rotation = -0.439927
+scale = Vector2( 2, 2 )
+offset = 984.89
+
+[node name="PathFollow_Fish3" parent="Objects/Fishes/Path2D15" instance=ExtResource( 4 )]
+position = Vector2( 6475.61, 4635.61 )
+rotation = 0.785744
+scale = Vector2( 2, 2 )
+offset = 1899.43
+
+[node name="Path2D16" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 14 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D16" instance=ExtResource( 4 )]
+position = Vector2( 4698.82, 2654.64 )
+rotation = -0.837972
+scale = Vector2( 2, 2 )
+offset = 517.54
+
+[node name="PathFollow_Fish4" parent="Objects/Fishes/Path2D16" instance=ExtResource( 4 )]
+position = Vector2( 5723.73, 2411.79 )
+rotation = 0.661086
+scale = Vector2( 2, 2 )
+offset = 1600.53
+
+[node name="PathFollow_Fish5" parent="Objects/Fishes/Path2D16" instance=ExtResource( 4 )]
+position = Vector2( 5301.32, 3342.3 )
+rotation = -2.79281
+scale = Vector2( 2, 2 )
+offset = 3500.0
+
+[node name="PathFollow_Fish6" parent="Objects/Fishes/Path2D16" instance=ExtResource( 4 )]
+position = Vector2( 4758.26, 3134.26 )
+rotation = -2.35628
+scale = Vector2( 2, 2 )
+offset = 4100.0
+
+[node name="PathFollow_Fish2" parent="Objects/Fishes/Path2D16" instance=ExtResource( 4 )]
+position = Vector2( 5194.43, 2457.86 )
+rotation = -0.321673
+scale = Vector2( 2, 2 )
+offset = 1053.18
+
+[node name="PathFollow_Fish3" parent="Objects/Fishes/Path2D16" instance=ExtResource( 4 )]
+position = Vector2( 5761.81, 3146.99 )
+rotation = 1.63307
+scale = Vector2( 2, 2 )
+offset = 2913.24
+
+[node name="PathFollow_Fish7" parent="Objects/Fishes/Path2D16" instance=ExtResource( 4 )]
+position = Vector2( 5376.72, 2802.19 )
+rotation = 1.68855
+scale = Vector2( 2, 2 )
+offset = 2278.17
+
+[node name="Path2D17" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 15 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D17" instance=ExtResource( 4 )]
+position = Vector2( 4868.21, 1718.49 )
+rotation = 0.239201
+offset = 463.26
+
+[node name="PathFollow_Fish2" parent="Objects/Fishes/Path2D17" instance=ExtResource( 4 )]
+position = Vector2( 5044.55, 1523.68 )
+rotation = 0.49397
+offset = 1029.7
+
+[node name="PathFollow_Fish3" parent="Objects/Fishes/Path2D17" instance=ExtResource( 4 )]
+position = Vector2( 5321.3, 1561.61 )
+rotation = -2.68773
+offset = 3707.44
+
+[node name="PathFollow_Fish4" parent="Objects/Fishes/Path2D17" instance=ExtResource( 4 )]
+position = Vector2( 5130.81, 1693.76 )
+rotation = -2.81124
+offset = 4325.38
+
+[node name="PathFollow_Fish5" parent="Objects/Fishes/Path2D17" instance=ExtResource( 4 )]
+position = Vector2( 5232.33, 1419.47 )
+rotation = 0.39481
+offset = 1802.18
+
+[node name="PathFollow_Fish6" parent="Objects/Fishes/Path2D17" instance=ExtResource( 4 )]
+position = Vector2( 5323.29, 1263.84 )
+rotation = 2.88639
+offset = 3132.0
+
+[node name="Path2D18" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 16 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D18" instance=ExtResource( 4 )]
+position = Vector2( 3648, 4408 )
+rotation = 1.64761
+scale = Vector2( 1.5, 1.5 )
+
+[node name="PathFollow_Fish3" parent="Objects/Fishes/Path2D18" instance=ExtResource( 4 )]
+position = Vector2( 3934.02, 4180.59 )
+rotation = -1.30457
+scale = Vector2( 1.5, 1.5 )
+offset = 971.31
+
+[node name="PathFollow_Fish4" parent="Objects/Fishes/Path2D18" instance=ExtResource( 4 )]
+position = Vector2( 4185.48, 3879.1 )
+rotation = -1.70344
+scale = Vector2( 1.5, 1.5 )
+offset = 1387.74
+
+[node name="PathFollow_Fish5" parent="Objects/Fishes/Path2D18" instance=ExtResource( 4 )]
+position = Vector2( 4044.37, 3439.88 )
+rotation = -1.14081
+scale = Vector2( 1.5, 1.5 )
+offset = 1896.52
+
+[node name="PathFollow_Fish6" parent="Objects/Fishes/Path2D18" instance=ExtResource( 4 )]
+position = Vector2( 4454.51, 3520.01 )
+rotation = 1.38735
+scale = Vector2( 1.5, 1.5 )
+offset = 2451.55
+
+[node name="PathFollow_Fish8" parent="Objects/Fishes/Path2D18" instance=ExtResource( 4 )]
+position = Vector2( 4240.51, 4310.1 )
+rotation = 2.60115
+scale = Vector2( 1.5, 1.5 )
+offset = 4116.65
+
+[node name="Path2D19" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 17 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D19" instance=ExtResource( 4 )]
+position = Vector2( 6888.6, 1800.32 )
+rotation = 0.494016
+offset = 1.0
+
+[node name="PathFollow_Fish2" parent="Objects/Fishes/Path2D19" instance=ExtResource( 4 )]
+position = Vector2( 7199.89, 1886.8 )
+rotation = 0.183061
+offset = 328.17
+
+[node name="PathFollow_Fish3" parent="Objects/Fishes/Path2D19" instance=ExtResource( 4 )]
+position = Vector2( 7028.9, 1701.16 )
+rotation = -2.76122
+offset = 711.62
+
+[node name="Path2D20" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 18 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D20" instance=ExtResource( 4 )]
+position = Vector2( 7128, 2344 )
+rotation = 2.92286
+scale = Vector2( 2, 2 )
+
+[node name="PathFollow_Fish2" parent="Objects/Fishes/Path2D20" instance=ExtResource( 4 )]
+position = Vector2( 6973.09, 2711.1 )
+rotation = 0.88508
+scale = Vector2( 2, 2 )
+offset = 542.08
+
+[node name="PathFollow_Fish3" parent="Objects/Fishes/Path2D20" instance=ExtResource( 4 )]
+position = Vector2( 7478.91, 2874.3 )
+rotation = 0.321751
+scale = Vector2( 2, 2 )
+offset = 1084.15
+
+[node name="PathFollow_Fish5" parent="Objects/Fishes/Path2D20" instance=ExtResource( 4 )]
+position = Vector2( 8006.77, 3167.3 )
+rotation = 0.519063
+scale = Vector2( 2, 2 )
+offset = 1698.49
+
+[node name="PathFollow_Fish6" parent="Objects/Fishes/Path2D20" instance=ExtResource( 4 )]
+position = Vector2( 8217.19, 2725.48 )
+rotation = -2.24565
+scale = Vector2( 2, 2 )
+offset = 2529.67
+
+[node name="PathFollow_Fish4" parent="Objects/Fishes/Path2D20" instance=ExtResource( 4 )]
+position = Vector2( 7730.8, 2418.73 )
+rotation = -2.7017
+scale = Vector2( 2, 2 )
+offset = 3107.89
+
+[node name="Path2D21" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 19 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D21" instance=ExtResource( 4 )]
+position = Vector2( 6312, 3824 )
+rotation = -0.507183
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Path2D22" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 20 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D22" instance=ExtResource( 4 )]
+position = Vector2( 6608, 3280 )
+rotation = 0.610716
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Open_Fish_cirkel10" parent="Objects/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 7216, 4592 )
+
+[node name="dou_fish" parent="Objects/Fishes" instance=ExtResource( 10 )]
+position = Vector2( 6952, 3944 )
+rotation = 1.0472
+inverse = -1
+
+[node name="dou_fish2" parent="Objects/Fishes" instance=ExtResource( 10 )]
+position = Vector2( 7392, 3920 )
+rotation = 0.785397
+
+[node name="dou_fish3" parent="Objects/Fishes" instance=ExtResource( 10 )]
+position = Vector2( 7136, 3568 )
+rotation = 1.0472
+
+[node name="Fish_cog6" parent="Objects/Fishes" instance=ExtResource( 7 )]
+position = Vector2( 8496, 4704 )
+
+[node name="Fish_cog7" parent="Objects/Fishes" instance=ExtResource( 7 )]
+position = Vector2( 8200, 5080 )
+rotation = 0.523598
+inverse = -1
+
+[node name="Path2D23" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 21 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D23" instance=ExtResource( 4 )]
+position = Vector2( 8736, 5168 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="PathFollow_Fish2" parent="Objects/Fishes/Path2D23" instance=ExtResource( 4 )]
+position = Vector2( 9117.1, 4440.65 )
+rotation = -2.77055
+scale = Vector2( 1.5, 1.5 )
+offset = 1220.42
+
+[node name="Path2D24" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 22 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D24" instance=ExtResource( 4 )]
+position = Vector2( 8064, 2064 )
+rotation = 0.117087
+scale = Vector2( 1.5, 1.5 )
+
+[node name="PathFollow_Fish2" parent="Objects/Fishes/Path2D24" instance=ExtResource( 4 )]
+position = Vector2( 8396.34, 1882.98 )
+rotation = -1.24947
+scale = Vector2( 1.5, 1.5 )
+offset = 448.97
+
+[node name="PathFollow_Fish3" parent="Objects/Fishes/Path2D24" instance=ExtResource( 4 )]
+position = Vector2( 8473.3, 1527.45 )
+rotation = -1.29204
+scale = Vector2( 1.5, 1.5 )
+offset = 813.76
+
+[node name="PathFollow_Fish4" parent="Objects/Fishes/Path2D24" instance=ExtResource( 4 )]
+position = Vector2( 8594.06, 1216.5 )
+rotation = -1.52712
+scale = Vector2( 1.5, 1.5 )
+offset = 1150.49
+
+[node name="PathFollow_Fish5" parent="Objects/Fishes/Path2D24" instance=ExtResource( 4 )]
+position = Vector2( 8392.35, 990.088 )
+rotation = -2.89664
+scale = Vector2( 1.5, 1.5 )
+offset = 1515.28
+
+[node name="PathFollow_Fish6" parent="Objects/Fishes/Path2D24" instance=ExtResource( 4 )]
+position = Vector2( 8110.62, 1061.24 )
+rotation = 2.40875
+scale = Vector2( 1.5, 1.5 )
+offset = 1823.95
+
+[node name="PathFollow_Fish7" parent="Objects/Fishes/Path2D24" instance=ExtResource( 4 )]
+position = Vector2( 8049.05, 1379.64 )
+rotation = 1.71965
+scale = Vector2( 1.5, 1.5 )
+offset = 2160.68
+
+[node name="PathFollow_Fish8" parent="Objects/Fishes/Path2D24" instance=ExtResource( 4 )]
+position = Vector2( 7985.42, 1737.77 )
+rotation = 1.67031
+scale = Vector2( 1.5, 1.5 )
+offset = 2525.47
+
+[node name="Path2D25" type="Path2D" parent="Objects/Fishes"]
+curve = SubResource( 23 )
+
+[node name="PathFollow_Fish" parent="Objects/Fishes/Path2D25" instance=ExtResource( 4 )]
+position = Vector2( 8976, 2560 )
+rotation = -0.785442
+scale = Vector2( 1.5, 1.5 )
+
+[node name="PathFollow_Fish2" parent="Objects/Fishes/Path2D25" instance=ExtResource( 4 )]
+position = Vector2( 9224.77, 2271.49 )
+rotation = -1.78935
+scale = Vector2( 1.5, 1.5 )
+offset = 394.58
+
+[node name="PathFollow_Fish3" parent="Objects/Fishes/Path2D25" instance=ExtResource( 4 )]
+position = Vector2( 8898.29, 2286.28 )
+rotation = 2.4979
+scale = Vector2( 1.5, 1.5 )
+offset = 827.34
+
 [node name="Trash" type="Node2D" parent="Objects"]
 
 [node name="Trash" parent="Objects/Trash" instance=ExtResource( 5 )]
 position = Vector2( 992, 800 )
 
 [node name="Trash2" parent="Objects/Trash" instance=ExtResource( 5 )]
-position = Vector2( 1560, 952 )
+position = Vector2( 1464, 872 )
+
+[node name="Trash88" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 1792, 1144 )
 
 [node name="Trash3" parent="Objects/Trash" instance=ExtResource( 5 )]
 position = Vector2( 1200, 1560 )
@@ -276,7 +726,7 @@ position = Vector2( 1312, 2488 )
 position = Vector2( 2808, 2536 )
 
 [node name="Trash17" parent="Objects/Trash" instance=ExtResource( 5 )]
-position = Vector2( 4144, 2368 )
+position = Vector2( 4120, 2360 )
 
 [node name="Trash18" parent="Objects/Trash" instance=ExtResource( 5 )]
 position = Vector2( 2792, 3048 )
@@ -293,11 +743,125 @@ position = Vector2( 2808, 3560 )
 [node name="Trash22" parent="Objects/Trash" instance=ExtResource( 5 )]
 position = Vector2( 2752, 3856 )
 
+[node name="Trash69" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 3000, 4464 )
+
+[node name="Trash70" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 3392, 4376 )
+
+[node name="Trash71" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 3976, 4984 )
+
+[node name="Trash72" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 5712, 4880 )
+
+[node name="Trash73" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 6568, 3304 )
+
+[node name="Trash74" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 7344, 3216 )
+
+[node name="Trash75" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 6288, 3864 )
+
+[node name="Trash76" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 7672, 4304 )
+
+[node name="Trash79" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 8360, 4904 )
+
+[node name="Trash80" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 9128, 5128 )
+
+[node name="Trash83" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 7728, 5040 )
+
+[node name="Trash84" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 7200, 4576 )
+
+[node name="Trash85" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 5424, 5184 )
+
+[node name="Trash86" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 9320, 4784 )
+
+[node name="Trash87" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 8728, 4728 )
+
+[node name="Trash81" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 8288, 3760 )
+
+[node name="Trash82" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 8752, 3976 )
+
+[node name="Trash77" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 7096, 3784 )
+
+[node name="Trash78" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 6768, 3552 )
+
+[node name="Trash34" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 5176, 3856 )
+
+[node name="Trash51" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 3832, 4144 )
+
+[node name="Trash52" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 4112, 4432 )
+
+[node name="Trash53" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 4200, 4008 )
+
+[node name="Trash54" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 4016, 3680 )
+
+[node name="Trash55" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 4648, 3560 )
+
+[node name="Trash35" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 2728, 5240 )
+
+[node name="Trash36" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 5200, 4272 )
+
+[node name="Trash37" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 5160, 4680 )
+
+[node name="Trash44" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 5864, 4184 )
+
+[node name="Trash45" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 5392, 2824 )
+
+[node name="Trash46" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 5568, 3360 )
+
+[node name="Trash47" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 4632, 2864 )
+
 [node name="Trash23" parent="Objects/Trash" instance=ExtResource( 5 )]
 position = Vector2( 1552, 3960 )
 
 [node name="Trash24" parent="Objects/Trash" instance=ExtResource( 5 )]
 position = Vector2( 1296, 4032 )
+
+[node name="Trash38" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 552, 5160 )
+
+[node name="Trash39" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 1016, 5024 )
+
+[node name="Trash40" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 1192, 5272 )
+
+[node name="Trash41" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 1464, 4840 )
+
+[node name="Trash42" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 1640, 5248 )
+
+[node name="Trash43" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 2248, 5248 )
 
 [node name="Trash33" parent="Objects/Trash" instance=ExtResource( 5 )]
 position = Vector2( 280, 4368 )
@@ -323,6 +887,60 @@ position = Vector2( 2360, 3360 )
 [node name="Trash13" parent="Objects/Trash" instance=ExtResource( 5 )]
 position = Vector2( 4152, 1816 )
 
+[node name="Trash48" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 4992, 1712 )
+
+[node name="Trash49" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 5368, 1368 )
+
+[node name="Trash50" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 5544, 936 )
+
+[node name="Trash56" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 6000, 840 )
+
+[node name="Trash57" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 6544, 1008 )
+
+[node name="Trash89" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 6992, 848 )
+
+[node name="Trash90" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 6648, 2248 )
+
+[node name="Trash66" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 6288, 1680 )
+
+[node name="Trash67" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 8232, 1688 )
+
+[node name="Trash68" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 8288, 1336 )
+
+[node name="Trash58" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 7248, 1832 )
+
+[node name="Trash59" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 6896, 2544 )
+
+[node name="Trash60" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 5504, 2392 )
+
+[node name="Trash61" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 7520, 2880 )
+
+[node name="Trash62" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 7856, 2352 )
+
+[node name="Trash63" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 8616, 3096 )
+
+[node name="Trash64" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 9088, 2864 )
+
+[node name="Trash65" parent="Objects/Trash" instance=ExtResource( 5 )]
+position = Vector2( 9216, 3616 )
+
 [node name="Trash14" parent="Objects/Trash" instance=ExtResource( 5 )]
 position = Vector2( 3608, 848 )
 
@@ -332,14 +950,29 @@ position = Vector2( 4024, 768 )
 [node name="Trash16" parent="Objects/Trash" instance=ExtResource( 5 )]
 position = Vector2( 4160, 1088 )
 
-[node name="Hart_item" parent="Objects" instance=ExtResource( 8 )]
-position = Vector2( 312, 1328 )
-
-[node name="Hart_item2" parent="Objects" instance=ExtResource( 8 )]
-position = Vector2( 136, 3416 )
-
 [node name="Player" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 504, 808 )
+
+[node name="Harts" type="Node2D" parent="Objects"]
+
+[node name="Hart_item2" parent="Objects/Harts" instance=ExtResource( 8 )]
+position = Vector2( 136, 3416 )
+
+[node name="Hart_item" parent="Objects/Harts" instance=ExtResource( 8 )]
+position = Vector2( 312, 1328 )
+
+[node name="Hart_item4" parent="Objects/Harts" instance=ExtResource( 8 )]
+position = Vector2( 7360, 1016 )
+
+[node name="Hart_item5" parent="Objects/Harts" instance=ExtResource( 8 )]
+position = Vector2( 9344, 2072 )
+
+[node name="Hart_item3" parent="Objects/Harts" instance=ExtResource( 8 )]
+position = Vector2( 6248, 4960 )
+
+[node name="End_flag" parent="Objects" instance=ExtResource( 11 )]
+position = Vector2( 9304, 992 )
+rotation = -0.254818
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 build_mode = 1
@@ -355,7 +988,7 @@ polygon = PoolVector2Array( 528, 1832, 1032, 1720, 1240, 1672, 1456, 1584, 1536,
 polygon = PoolVector2Array( 616, 3048, 584, 2904, 488, 2728, 528, 2664, 576, 2624, 696, 2632, 736, 2688, 848, 2656, 976, 2672, 1048, 2712, 1072, 2760, 1096, 2936, 1112, 2968, 1232, 3048, 1288, 3128, 1320, 3336, 1448, 3464, 1616, 3480, 1696, 3520, 1752, 3608, 1936, 3656, 1984, 3640, 2088, 3520, 2368, 3456, 2480, 3408, 2488, 3312, 2408, 3248, 2208, 3256, 2016, 3312, 1824, 3312, 1664, 3248, 1512, 3256, 1472, 3232, 1456, 3168, 1496, 3120, 1600, 3120, 1704, 3152, 2088, 3160, 2304, 3160, 2384, 3080, 2544, 3048, 2616, 3048, 2696, 3088, 2752, 3176, 2760, 3280, 2752, 3352, 2728, 3408, 2688, 3496, 2640, 3672, 2632, 3728, 2624, 3968, 2568, 4072, 2512, 4080, 2432, 4072, 2360, 4032, 2304, 4000, 2248, 3896, 2200, 3880, 1768, 3856, 1600, 3816, 1376, 3888, 1312, 3904, 1208, 3888, 1160, 3864, 1096, 3776, 1016, 3672, 920, 3392, 912, 3280, 936, 3128, 912, 3040, 848, 2976, 768, 2968, 720, 3008, 664, 3064, 616, 3072 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 3624, 4184, 3152, 4256, 3008, 4336, 2768, 4336, 2736, 4264, 2768, 4136, 2832, 4040, 3040, 3272, 3088, 3200, 3336, 3152, 3488, 3152, 3600, 3144, 3680, 3192, 3824, 3336, 3880, 3472, 3784, 3728, 3720, 4072 )
+polygon = PoolVector2Array( 3624, 4184, 3152, 4256, 3008, 4336, 2768, 4336, 2736, 4264, 2768, 4136, 2832, 4040, 3040, 3272, 3088, 3200, 3336, 3152, 3488, 3152, 3600, 3144, 3680, 3064, 3696, 2952, 4064, 3144, 3960, 3224, 3880, 3472, 3784, 3728, 3720, 4072 )
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 3728, 1760, 3744, 1720, 3768, 1688, 3840, 1664, 3896, 1672, 3944, 1688, 3952, 1720, 3952, 1792, 3816, 1824, 3792, 1832, 3744, 1824, 3728, 1800 )
@@ -389,4 +1022,74 @@ polygon = PoolVector2Array( 2152, 2800, 2128, 2856, 2152, 2936, 2240, 2944, 2416
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 864, 640 )
-shape = SubResource( 11 )
+shape = SubResource( 24 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 1400, 4592, 1352, 4720, 1208, 4776, 896, 4832, 592, 4848, 432, 4904, 360, 4960, 352, 5088, 392, 5184, 576, 5280, 712, 5328, 928, 5344, 1528, 5360, 1808, 5344, 2080, 5352, 2328, 5352, 2440, 5328, 2720, 5328, 2904, 5336, 3080, 5256, 3200, 5160, 3344, 5120, 3680, 5264, 3872, 5288, 4000, 5296, 4072, 5312, 4224, 5320, 4656, 5304, 4736, 5328, 5064, 5320, 5192, 5288, 5568, 5296, 5704, 5312, 6056, 5328, 6160, 5344, 6760, 5336, 6936, 5248, 7088, 5160, 7192, 5144, 7272, 5112, 7504, 5112, 7696, 5152, 7872, 5320, 8024, 5352, 8256, 5360, 8288, 5360, 8448, 5304, 8576, 5296, 8664, 5248, 8960, 5248, 9080, 5264, 9216, 5232, 9296, 5168, 9376, 5080, 9472, 4856, 9472, 4672, 9440, 4560, 9336, 4448, 9240, 4328, 9184, 4232, 9184, 4096, 9192, 4072, 9240, 3960, 9272, 3928, 9328, 3912, 9400, 3904, 9464, 3872, 9512, 3816, 9544, 3760, 9552, 3712, 9504, 3464, 9408, 3360, 9344, 3328, 9280, 3304, 9216, 3288, 9088, 3288, 9048, 3296, 8904, 3368, 8904, 3408, 8928, 3520, 8928, 3736, 8912, 3824, 8888, 3864, 8824, 3880, 8768, 3880, 8672, 3832, 8632, 3800, 8592, 3792, 8520, 3760, 8464, 3720, 8448, 3696, 8424, 3656, 8384, 3616, 8328, 3456, 8344, 3408, 8368, 3368, 8416, 3336, 8456, 3264, 8576, 3224, 8744, 3168, 8896, 3136, 9128, 3080, 9184, 3040, 9224, 2952, 9248, 2824, 9256, 2680, 9208, 2608, 9200, 2496, 9232, 2432, 9344, 2312, 9456, 2240, 9496, 2128, 9504, 1984, 9472, 1944, 9376, 1928, 9264, 1944, 9192, 1984, 9120, 2016, 9064, 2032, 8880, 2176, 8768, 2272, 8760, 2280, 8648, 2424, 8704, 2552, 8720, 2568, 8760, 2600, 8936, 2680, 8960, 2696, 8960, 2728, 8960, 2744, 8936, 2784, 8904, 2824, 8808, 2904, 8776, 2920, 8704, 2936, 8640, 2952, 8512, 2960, 8456, 2936, 8424, 2912, 8408, 2880, 8352, 2688, 8312, 2648, 8240, 2624, 8160, 2584, 8128, 2584, 8056, 2520, 8032, 2480, 8024, 2448, 8032, 2400, 8080, 2320, 8128, 2280, 8288, 2248, 8360, 2208, 8432, 2104, 8520, 1904, 8560, 1808, 8576, 1664, 8608, 1504, 8672, 1368, 8728, 1272, 8824, 1208, 8896, 1184, 8992, 1176, 9056, 1160, 9120, 1136, 9408, 1072, 9672, 952, 9656, 5544, 216, 5536, 224, 4632 )
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 1664, 4872, 1656, 4896, 1664, 4976, 1696, 5080, 1720, 5112, 1768, 5144, 1896, 5152, 2016, 5160, 2704, 5160, 2744, 5144, 2832, 5136, 3120, 4960, 3384, 4928, 3688, 4992, 3744, 5040, 3800, 5008, 3872, 4944, 3912, 4904, 3984, 4880, 4048, 4872, 4088, 4888, 4120, 4952, 4080, 5008, 4040, 5048, 4040, 5096, 4056, 5120, 4480, 5136, 4536, 5168, 4624, 5160, 4696, 5096, 4760, 4952, 4576, 4888, 4552, 4856, 4560, 4808, 4632, 4736, 4752, 4728, 4760, 4576, 4704, 4536, 4592, 4504, 4536, 4448, 4568, 4352, 4656, 4296, 4744, 4272, 4768, 4248, 4760, 4200, 4696, 4152, 4576, 4096, 4552, 4016, 4624, 3912, 4768, 3832, 4776, 3752, 4744, 3696, 4632, 3680, 4456, 3728, 4416, 3776, 4400, 3888, 4360, 4032, 4360, 4224, 4376, 4328, 4368, 4456, 4320, 4592, 4240, 4656, 4120, 4696, 3920, 4712, 3776, 4712, 3744, 4704, 3664, 4680, 3384, 4528, 3256, 4528, 3160, 4552, 3096, 4584, 3016, 4640, 2952, 4680, 2816, 4712, 2744, 4736, 2672, 4776, 2592, 4816, 2232, 4808, 2056, 4752, 1952, 4680, 1928, 4696, 1864, 4768, 1752, 4816 )
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 5024, 5040, 5008, 4976, 5016, 4856, 5064, 4808, 5224, 4776, 5288, 4768, 5296, 4720, 5240, 4600, 5144, 4568, 5072, 4560, 5032, 4512, 5040, 4464, 5104, 4400, 5320, 4336, 5360, 4280, 5336, 4208, 5192, 4128, 5048, 4112, 5008, 4048, 5032, 3992, 5248, 3960, 5312, 3856, 5248, 3736, 5192, 3696, 5032, 3688, 4960, 3600, 4920, 3488, 4912, 3400, 5000, 3376, 5096, 3384, 5328, 3480, 5416, 3504, 5504, 3496, 5656, 3448, 5784, 3352, 5880, 3192, 5896, 3112, 5856, 2920, 5776, 2872, 5520, 2832, 5520, 2776, 5624, 2736, 5768, 2728, 5880, 2728, 5912, 2672, 5912, 2472, 5896, 2368, 5808, 2296, 5648, 2264, 5456, 2288, 5256, 2344, 5184, 2344, 5136, 2304, 5080, 2224, 5040, 2200, 4992, 2104, 5008, 1960, 5072, 1864, 5184, 1768, 5304, 1728, 5448, 1680, 5528, 1608, 5600, 1464, 5632, 1224, 5640, 1104, 5688, 1032, 5976, 1024, 6072, 1056, 6248, 1096, 6280, 1144, 6280, 1224, 6264, 1280, 6216, 1368, 6072, 1552, 5984, 1672, 5912, 1824, 5904, 1976, 5984, 2120, 6072, 2264, 6168, 2296, 6312, 2312, 6336, 2312, 6512, 2352, 6656, 2400, 6712, 2464, 6736, 2512, 6744, 2608, 6760, 2664, 6856, 2824, 6944, 2864, 7088, 2896, 7216, 2912, 7360, 2936, 7544, 2992, 7776, 3080, 7808, 3136, 7864, 3240, 8048, 3472, 8088, 3560, 8096, 3616, 8056, 3704, 7840, 3744, 7704, 3736, 7592, 3672, 7480, 3528, 7432, 3424, 7448, 3360, 7472, 3296, 7464, 3160, 7408, 3104, 7336, 3112, 7248, 3152, 7192, 3264, 7128, 3296, 6824, 3304, 6624, 3168, 6568, 3152, 6488, 3176, 6416, 3224, 6400, 3312, 6464, 3488, 6464, 3520, 6416, 3592, 6376, 3704, 6168, 3800, 6120, 3848, 6112, 3912, 6160, 3992, 6264, 4008, 6376, 4000, 6512, 3968, 6544, 3976, 6608, 4056, 6752, 4144, 6904, 4184, 6936, 4216, 6952, 4272, 6952, 4320, 7024, 4504, 7144, 4728, 7160, 4816, 7136, 4864, 7040, 4872, 6976, 4864, 6904, 4808, 6800, 4768, 6696, 4728, 6648, 4680, 6520, 4480, 6400, 4424, 6208, 4360, 6120, 4352, 6048, 4304, 5944, 4072, 5888, 4056, 5784, 4088, 5704, 4280, 5616, 4312, 5536, 4320, 5464, 4448, 5456, 4608, 5536, 4712, 5576, 4808, 5568, 4960, 5504, 5048, 5352, 5104, 5184, 5120, 5056, 5104 )
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 6064, 5120, 5952, 5120, 5880, 4984, 5832, 4800, 5744, 4680, 5704, 4592, 5704, 4528, 5720, 4496, 5776, 4456, 5832, 4448, 5952, 4536, 6136, 4584, 6240, 4600, 6360, 4664, 6416, 4720, 6536, 4888, 6600, 4920, 6720, 4944, 6752, 4992, 6752, 5048, 6736, 5080, 6688, 5104, 6520, 5104, 6472, 5088, 6344, 4872, 6264, 4832, 6160, 4856, 6128, 4896, 6120, 5000, 6112, 5056 )
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 5368, 3000, 5648, 3040, 5656, 3096, 5632, 3184, 5576, 3216, 5480, 3224, 5064, 3160, 4944, 3080, 4792, 2912, 4792, 2808, 4888, 2672, 5016, 2608, 5432, 2488, 5592, 2488, 5616, 2520, 5600, 2560, 5304, 2680, 5272, 2744, 5280, 2896, 5320, 2976 )
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 6824, 1088, 6808, 1152, 6856, 1352, 6864, 1464, 6880, 1504, 7000, 1592, 7048, 1608, 7200, 1688, 7384, 1736, 7408, 1864, 7344, 1960, 7072, 1952, 6872, 1904, 6784, 1848, 6600, 1824, 6512, 1864, 6496, 1952, 6528, 2048, 6608, 2112, 6760, 2144, 7112, 2240, 7432, 2248, 7744, 2144, 7864, 1760, 7880, 1456, 7928, 1320, 7944, 1136, 7992, 1016, 8096, 912, 8200, 840, 8048, 480, 7544, 672, 7432, 736, 7424, 840, 7488, 944, 7512, 1040, 7496, 1112, 7416, 1144, 7208, 1128, 7112, 1064, 6984, 1032 )
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 6416, 1360, 6400, 1480, 6408, 1528, 6464, 1600, 6560, 1624, 6624, 1608, 6664, 1560, 6672, 1520, 6656, 1464, 6616, 1400, 6576, 1368, 6528, 1344, 6448, 1344 )
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="."]
+position = Vector2( -376, 368 )
+polygon = PoolVector2Array( 6560, 1456, 6504, 1472, 6448, 1552, 6464, 1600, 6560, 1624, 6616, 1608, 6640, 1552, 6648, 1504, 6624, 1472 )
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1632, 312 )
+polygon = PoolVector2Array( 6560, 1456, 6480, 1472, 6456, 1552, 6464, 1600, 6512, 1624, 6616, 1632, 6664, 1584, 6664, 1504, 6624, 1472 )
+
+[node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1944, 3168 )
+polygon = PoolVector2Array( 6536, 1416, 6464, 1432, 6440, 1472, 6440, 1568, 6464, 1616, 6520, 1632, 6616, 1632, 6664, 1584, 6664, 1504, 6648, 1448, 6592, 1424 )
+
+[node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1624, 3560 )
+polygon = PoolVector2Array( 6536, 1416, 6464, 1432, 6440, 1472, 6416, 1504, 6408, 1560, 6432, 1592, 6464, 1608, 6624, 1624, 6680, 1608, 6696, 1576, 6680, 1520, 6632, 1448, 6592, 1424 )
+
+[node name="CollisionPolygon2D30" type="CollisionPolygon2D" parent="."]
+position = Vector2( 824, 2408 )
+polygon = PoolVector2Array( 6528, 1408, 6456, 1424, 6408, 1456, 6408, 1560, 6424, 1616, 6480, 1632, 6560, 1640, 6680, 1608, 6712, 1560, 6704, 1496, 6656, 1448, 6592, 1424 )
+
+[node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="."]
+position = Vector2( 360, 2440 )
+polygon = PoolVector2Array( 6520, 1416, 6488, 1440, 6488, 1528, 6528, 1576, 6568, 1608, 6624, 1616, 6680, 1608, 6712, 1560, 6696, 1496, 6632, 1456, 6584, 1424 )
+
+[node name="CollisionPolygon2D32" type="CollisionPolygon2D" parent="."]
+position = Vector2( 552, 2056 )
+polygon = PoolVector2Array( 6528, 1464, 6480, 1504, 6472, 1520, 6480, 1584, 6512, 1608, 6624, 1616, 6680, 1608, 6712, 1592, 6720, 1552, 6696, 1496, 6632, 1456, 6584, 1448 )
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1688, -16 )
+polygon = PoolVector2Array( 6592, 1448, 6464, 1480, 6432, 1520, 6432, 1584, 6456, 1616, 6552, 1632, 6616, 1608, 6664, 1568, 6656, 1512, 6624, 1472 )
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1776, -360 )
+polygon = PoolVector2Array( 6560, 1456, 6504, 1464, 6456, 1488, 6416, 1528, 6432, 1592, 6472, 1616, 6544, 1632, 6624, 1632, 6672, 1616, 6696, 1568, 6688, 1496, 6624, 1472 )
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 7104, 2472, 7568, 2464, 7616, 2496, 7680, 2512, 7744, 2560, 7792, 2608, 7824, 2632, 7968, 2696, 8080, 2736, 8160, 2808, 8216, 2904, 8240, 3008, 8232, 3064, 8184, 3096, 8120, 3096, 8072, 3080, 7936, 2960, 7760, 2832, 7680, 2784, 7608, 2768, 7416, 2736, 7304, 2720, 7160, 2680, 7088, 2616, 7056, 2536, 7080, 2496 )
+
+[node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 7400, 4296, 7368, 4320, 7336, 4384, 7336, 4496, 7344, 4552, 7440, 4800, 7496, 4832, 7568, 4864, 7608, 4872, 7648, 4888, 7952, 4888, 8072, 4848, 8088, 4840, 8152, 4680, 8152, 4552, 8248, 4416, 8408, 4368, 8744, 4368, 8840, 4336, 8888, 4256, 8904, 4192, 8888, 4160, 8800, 4136, 8744, 4064, 8616, 3992, 8304, 3904, 8200, 3904, 8104, 3944, 8008, 3952, 7880, 3960, 7784, 3984, 7744, 4048, 7744, 4160, 7744, 4248, 7760, 4320, 7792, 4392, 7744, 4424, 7656, 4424, 7488, 4328 )
+
+[node name="CollisionPolygon2D27" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 8592, 4936, 8576, 4976, 8584, 5024, 8648, 5072, 8768, 5088, 8912, 5072, 9064, 5000, 9104, 4976, 9176, 4824, 9192, 4720, 9176, 4624, 9152, 4552, 9056, 4504, 8960, 4496, 8880, 4528, 8856, 4592, 8848, 4728, 8840, 4808, 8768, 4872, 8640, 4904 )
