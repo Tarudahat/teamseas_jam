@@ -9,41 +9,41 @@
 [ext_resource path="res://menus/font.tres" type="Theme" id=7]
 [ext_resource path="res://assets/audio/music/a-farming-we-will-go.ogg" type="AudioStream" id=8]
 
-[sub_resource type="StyleBoxEmpty" id=3]
+[sub_resource type="StyleBoxEmpty" id=1]
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 350, 100 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 350, 0, 350, 100 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
 "name": "default",
 "speed": 4.0
 } ]
 
-[sub_resource type="StyleBoxEmpty" id=7]
+[sub_resource type="StyleBoxEmpty" id=5]
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 350, 100 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 350, 0, 350, 100 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 4.0
@@ -71,31 +71,38 @@ position = Vector2( 0, 0.5 )
 
 [node name="sprite3" parent="trash" instance=ExtResource( 5 )]
 position = Vector2( -56, 347.5 )
+frame = 0
 
 [node name="sprite4" parent="trash" instance=ExtResource( 5 )]
 position = Vector2( -176, 227.5 )
+frame = 0
 
 [node name="sprite6" parent="trash" instance=ExtResource( 5 )]
 position = Vector2( -252, 123.5 )
+frame = 0
 
 [node name="sprite7" parent="trash" instance=ExtResource( 5 )]
 position = Vector2( -240, 323.5 )
+frame = 0
 
 [node name="sprite8" parent="trash" instance=ExtResource( 5 )]
 position = Vector2( -348, 475.5 )
+frame = 0
 
 [node name="sprite2" parent="trash" instance=ExtResource( 5 )]
 position = Vector2( -92, 83.5 )
+frame = 0
 
 [node name="sprite5" parent="trash" instance=ExtResource( 5 )]
 position = Vector2( -104, 479.5 )
+frame = 0
 
 [node name="Button" type="Button" parent="."]
 margin_left = 368.0
 margin_top = 230.0
 margin_right = 656.0
 margin_bottom = 302.0
-custom_styles/focus = SubResource( 3 )
+custom_styles/focus = SubResource( 1 )
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -103,7 +110,8 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Button"]
 position = Vector2( 140, 40 )
-frames = SubResource( 6 )
+frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="TextureRect2" type="TextureRect" parent="."]
@@ -119,7 +127,7 @@ margin_left = 348.0
 margin_top = 392.0
 margin_right = 668.0
 margin_bottom = 464.0
-custom_styles/focus = SubResource( 7 )
+custom_styles/focus = SubResource( 5 )
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -127,7 +135,8 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Button2"]
 position = Vector2( 160, 32 )
-frames = SubResource( 10 )
+frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Control" type="Control" parent="."]

@@ -11,6 +11,8 @@ var moved: bool = false
 var moved_by_stick: bool = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if hp>=4:
+		hp=3
 	velocity -= velocity*0.07
 	moved = false
 	

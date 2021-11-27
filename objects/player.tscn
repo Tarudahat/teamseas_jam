@@ -89,7 +89,7 @@ shape = SubResource( 4 )
 current = true
 zoom = Vector2( 0.8, 0.8 )
 limit_left = 0
-limit_top = 500
+limit_top = 550
 limit_right = 9600
 limit_bottom = 5400
 limit_smoothed = true
@@ -115,20 +115,19 @@ shape = SubResource( 6 )
 position = Vector2( 104, 80 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="hp2" type="AnimatedSprite" parent="UI"]
 position = Vector2( 232, 80 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="hp3" type="AnimatedSprite" parent="UI"]
 position = Vector2( 360, 80 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 9 )
+frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="UI"]
